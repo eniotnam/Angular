@@ -1,0 +1,63 @@
+
+<div class="user-details" *ngIf="user">
+
+    <h4 class="mb-5">Profil de <span><b>{{user.firstname }}</b></span></h4>
+
+    <div class="row">
+        <div class="col-6 d-flex flex-wrap">
+            <div class="col-xs-12 col-2">
+                <strong>Firstname:</strong>
+            </div>
+            <div class="col-xs-12 col-10">
+                {{user.firstname|uppercase}}
+            </div>
+            <div class="col-xs-12 col-2">
+                <strong>Lastname:</strong>
+            </div>
+            <div class="col-xs-12 col-10">
+                {{user.lastname}}
+            </div>
+            <div class="col-xs-12 col-2">
+                <strong>Username:</strong>
+            </div>
+            <div class="col-xs-12 col-10">
+                {{user.username}}
+            </div>
+            <div class="col-xs-12 col-2">
+                <strong>Address:</strong>
+            </div>
+            <div class="col-xs-12 col-10" >
+                {{user.Address['street']}}
+                {{user.Address['city']}}
+                {{user.Address['codepostal']}}
+            </div>
+        </div>
+        <div class="col-6 d-flex flex-wrap">
+            <div class="col-xs-12 col-2">
+                <strong>Telephone:</strong>
+            </div>
+            <div class="col-xs-12 col-10">
+                {{user.telephone}}
+            </div>
+            <div class="col-xs-12 col-2">
+                <strong>E-mail:</strong>
+            </div>
+            <div class="col-xs-12 col-10">
+                {{user.mail}}
+            </div>
+            <div class="col-xs-12 col-2">
+                <strong>Poste:</strong>
+            </div>
+            <div class="col-xs-12 col-10">
+                {{user.post}}
+            </div>
+
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <a routerLink="/update/{{user._id}}" class="btn btn-primary">Modifier cet utilisateur</a>
+        <button type="button" name="button" class="btn btn-danger" (click)="deleteUser(user.id)">Supprimer cet utilisateur</button>
+    </div>
+
+</div>

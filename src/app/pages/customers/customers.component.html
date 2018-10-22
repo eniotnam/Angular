@@ -1,0 +1,35 @@
+<h1>Liste des Clients</h1>
+
+<div class="counter" *ngIf="customers">
+    <p>{{customers.length}} clients</p>
+</div>
+
+<div class="mt-5 mb-5">
+    <a routerLink='/createcustomer' class="btn btn-info">ajouter un client</a>
+</div>
+
+<table class="table">
+
+    <tr>
+        <td>Nom de l'entreprise</td>
+        <td>Address</td>
+        <td>Contact</td>
+        <td>Secteur d'activité</td>
+        <td></td>
+    </tr>
+
+    <tbody>
+        <tr *ngFor="let customer of customers">
+            <td>{{customer.businessname}}</td>
+            <td>{{customer.Address['street']+" " +customer.Address['city']+" "+customer.Address['postalcode']}}</td>
+            <td>{{customer.Contact['lastname']+" " +customer.Contact['name']+" "+customer.Contact['phone']+" "+customer.Contact['mail']}}</td>
+            <td>{{customer.activity}}</td>
+            <td>
+                <a routerLink="/customer/{{customer._id}}" class="btn btn-primary">voir profil</a>
+                <a routerLink="/updatecustomer/{{customer._id}}" class="btn btn-secondary">modifier profil</a>
+                <button type="button" name="button" class="btn btn-danger" (click)="deleteCustomers(customer._id)">Supprimer</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
