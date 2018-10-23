@@ -1,0 +1,20 @@
+.btn{
+    position:relative;
+    bottom:0;
+    width:100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.list h2{
+    border-radius:5px 5px 0 0;
+    padding:10px;
+    margin:0;
+   width:100%;
+    background:rgba(164, 170, 164, 0.35);
+}
+.list div.col-12{
+    background:rgba(132, 134, 132, 0.44);
+}
+.box{
+    overflow-y: auto;
+}

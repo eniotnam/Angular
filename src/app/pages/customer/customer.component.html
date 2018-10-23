@@ -1,7 +1,11 @@
-
+<div class="container">
+    <a routerLink='/customers' class="return btn btn-info">retour</a>  
+    <div class="row justify-content-center p-5">
+        <h1>Infos sur {{customer.businessname}}</h1>
+    </div>
+</div>
 <div class="customer-details" *ngIf="customer">
 
-    <h4 class="mb-5">Infos sur {{customer.businessname}}</h4>
 
     <div class="row">
         <div class="col-6 d-flex flex-wrap">

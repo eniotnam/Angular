@@ -1,4 +1,9 @@
-
+<div class="container">
+    <a routerLink='/customers' class="return btn btn-info">retour</a>  
+    <div class="row justify-content-center p-5">
+        <h1>Modifier le compte de : {{customer.businessname}}</h1>
+    </div>
+</div>
 <!-- formulaire de création d'un user -->
 <form *ngIf="customer">
   <div class="row">

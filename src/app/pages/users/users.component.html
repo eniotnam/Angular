@@ -1,11 +1,17 @@
-<h1>Liste des utilisateurs</h1>
+<div class="container">
+    <a routerLink='/' class="return btn btn-info">retour</a>  
+    <div class="row justify-content-center p-5">
+    <h1>Liste des employé.e.s</h1>
+    </div>
+</div>
+
 
 <div class="counter" *ngIf="users">
-    <p>{{users.length}} clients</p>
+    <p>{{users.length}} employé.e.s</p>
 </div>
 
 <div class="mt-5 mb-5">
-    <a routerLink='/create' class="btn btn-info">ajouter un utilisateur</a>
+    <a routerLink='/create' class="btn btn-info">ajouter un employé.e</a>
 </div>
 
 <table class="table">

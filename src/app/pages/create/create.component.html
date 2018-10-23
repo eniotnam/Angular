@@ -1,3 +1,11 @@
+
+<div class="container">
+   <a routerLink='/users' class="return btn btn-info">retour</a>  
+    <div class="row justify-content-center p-5">
+        <h1>Formulaire d'ajout d'employé.e</h1>
+          
+    </div>
+</div>
 <!-- formulaire de création d'un user -->
 <form>
     <div class="row">
@@ -50,17 +58,17 @@
                 <input type="mail" class="form-control" placeholder="E-mail" [value]="formCreate.mail" (change)="formCreate.mail = $event.target.value">
             </div>
         </div>
-        
+
     </div>
     <div class="row">
         <div class="col">
             <div class="form-group">
-            <label >Poste</label>
-            <input type="mail" class="form-control" placeholder="Poste" [value]="formCreate.post" (change)="formCreate.post = $event.target.value">
+                <label >Poste</label>
+                <input type="mail" class="form-control" placeholder="Poste" [value]="formCreate.post" (change)="formCreate.post = $event.target.value">
             </div>
         </div>
     </div>
-    
+
 
     <!-- bouton d'ajout, utiliser la fonction (click) -->
     <button type="button" name="button" class="btn btn-info" (click)=createUser()>Ajouter</button>

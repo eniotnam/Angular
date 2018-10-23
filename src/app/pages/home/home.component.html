@@ -1,16 +1,86 @@
 
+<div class="container">
 
-<a routerLink="/users" class="btn btn-primary ">
-    liste des salariés 
+    <div class="row justify-content-center p-5">
+        <h1>Bienvenue sur votre dashboard</h1>
+    </div>
 
-</a>
+</div>
+<div class="container">
+    <div class="row justify-center-between">
+        <div class="col list m-4 text-center">
+            <h2>Employé.e.s</h2><div class="col-12">{{users.length}}</div>
+             <table class="table col">
 
-<a routerLink="/projects" class="btn btn-primary ">
-    liste des projects
+                <tr>
+                    <td>Nom </td>
+                    <td>Prenom</td>
+                </tr>
+                <div class="col box">
+                    <tbody>
+                        <tr *ngFor="let user of users">
+                            <td>{{user.lastname}}</td>
+                           
+                            <td>{{user.firstname}}</td>
 
-</a>
+                        </tr>
+                    </tbody>
+                </div>
+            </table>
+            <a routerLink="/users" class="btn btn-primary ">Tout voir ></a>
+        </div>
 
-<a routerLink="/users" class="btn btn-primary ">
-    liste des clients
+        <div class="col list m-4 text-center">
+            <h2>Projets</h2><div class="col-12" *ngIf="users">{{users.length}}</div>
+             <table class="table col">
 
-</a>
+                <tr>
+                    <td>Nom </td>
+                    <td>Prix</td>
+                </tr>
+                <div class="col box">
+                    <tbody>
+                        <tr *ngFor="let project of projects">
+                            <td>{{project.name}}</td>
+                           
+                            <td>{{project.price}}</td>
+
+                        </tr>
+                    </tbody>
+                </div>
+            </table>
+            <a routerLink="/projects" class="btn btn-primary ">Tout voir ></a>
+        </div>
+
+        <div class="col list m-4 text-center">
+            <h2>Client.e.s </h2><div class="col-12">{{customers.length}}</div>
+            <table class="table col">
+
+                <tr>
+                    <td>Nom </td>
+                    <td>Activity</td>
+                </tr>
+                <div class="col box">
+                    <tbody>
+                        <tr *ngFor="let customer of customers">
+                            <td>{{customer.businessname}}</td>
+                           
+                            <td>{{customer.activity}}</td>
+
+                        </tr>
+                    </tbody>
+                </div>
+            </table>
+            <a routerLink="/customers" class="btn btn-primary ">Tout voir ></a>
+        </div>
+
+    </div>
+    <div class="row justify-content-center pt-5">
+        <div class="col-8 d-flex">
+           <h3>Chiffre d'affaire de l'entreprise :</h3>
+            <div *ngFor="let project of projects"><p>{{project.price}}</p>
+            </div>
+                        
+        </div>
+    </div>
+</div>
