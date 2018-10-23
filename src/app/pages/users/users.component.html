@@ -1,0 +1,42 @@
+<h1>Liste des utilisateurs</h1>
+
+<div class="counter" *ngIf="users">
+    <p>{{users.length}} clients</p>
+</div>
+
+<div class="mt-5 mb-5">
+    <a routerLink='/create' class="btn btn-info">ajouter un utilisateur</a>
+</div>
+
+<table class="table">
+
+    <tr>
+        <td>Firstname</td>
+        <td>Lastname</td>
+        <td>Username</td>
+        <td>Address</td>
+        <td>Telephone</td>
+        <td>E-mail</td>
+        <td>Post</td>
+        <td></td>
+    </tr>
+
+    <tbody>
+        <tr *ngFor="let user of users">
+            
+            <td>{{user.firstname}}</td>
+            <td>{{user.lastname}}</td>
+            <td>{{user.username}}</td>
+            <td >{{user.Address['street'] +" "+user.Address['city'] +" "+ user.Address['codepostal']}}</td>
+            <td>{{user.telephone}}</td>
+            <td>{{user.mail}}</td>
+            <td>{{user.post}}</td>
+            <td>
+                <a routerLink="/user/{{user._id}}" class="btn btn-primary">voir profil</a>
+                <a routerLink="/update/{{user._id}}" class="btn btn-secondary">modifier profil</a>
+                <button type="button" name="button" class="btn btn-danger" (click)="deleteUser(user._id)">Supprimer</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
